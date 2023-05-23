@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="diamobelt.Producto">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="VISTA DE MUEBLES" FontSize="18" HorizontalTextAlignment="Center"/>
+
+            <Grid Margin="10,30,20,10" >
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+
+           
+
+                <Label Text="Código Producto" FontSize="18" HorizontalTextAlignment="Center" Grid.Row="0"  Grid.Column="0"/>
+                <Entry x:Name="txtcodigoProducto" FontSize="18"   Placeholder="Ingrese codigo producto" Grid.Row="0"  Grid.Column="1"></Entry>
+
+                <Label Text="Nombre Producto" FontSize="18" HorizontalTextAlignment="Center" Grid.Row="1"  Grid.Column="0"/>
+                <Entry x:Name="txtnombreProducto"  FontSize="18" Placeholder="Ingrese nombre del producto" Grid.Row="1"  Grid.Column="1"></Entry>
+
+                <Label Text="Descripción Producro" FontSize="18" HorizontalTextAlignment="Center" Grid.Row="2"  Grid.Column="0"/>
+                <Entry x:Name="txtdescProducto"  FontSize="18"  Placeholder="Ingrese descripcion" Grid.Row="2"  Grid.Column="1"></Entry>
+
+                <Label Text="Precio Producto" FontSize="18" HorizontalTextAlignment="Center" Grid.Row="3"  Grid.Column="0"/>
+                <Entry x:Name="txtprecioPrtoducto"  FontSize="18"  Placeholder="Ingrese el precio" Grid.Row="3"  Grid.Column="1" Keyboard="Numeric" ></Entry>
+
+                <Label Text="Imagen Producto" FontSize="18" HorizontalTextAlignment="Center" Grid.Row="4"  Grid.Column="0"/>
+                <Entry x:Name="txtimgProducto" FontSize="18"   Placeholder="Imagen Producto" Grid.Row="4"  Grid.Column="1"></Entry>
+
+            </Grid>
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
