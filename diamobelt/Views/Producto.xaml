@@ -9,7 +9,7 @@
             <Grid Margin="10,30,20,10" >
 
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
+                    <RowDefinition />
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
@@ -21,9 +21,9 @@
                 </Grid.ColumnDefinitions>
 
 
-           
 
-                <Label Text="Código Producto" FontSize="18" HorizontalTextAlignment="Center" Grid.Row="0"  Grid.Column="0"/>
+
+                <Label Text="Código Producto" FontSize="18" HorizontalTextAlignment="Center" Grid.Row="0"  Grid.Column="0" />
                 <Entry x:Name="txtcodigoProducto" FontSize="18"   Placeholder="Ingrese codigo producto" Grid.Row="0"  Grid.Column="1"></Entry>
 
                 <Label Text="Nombre Producto" FontSize="18" HorizontalTextAlignment="Center" Grid.Row="1"  Grid.Column="0"/>
