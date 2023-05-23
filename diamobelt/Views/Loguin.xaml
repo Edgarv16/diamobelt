@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"             
+             x:Class="diamobelt.Loguin">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Bienvenidos"  FontAttributes="Bold"
+                       FontSize="24"
+                       HorizontalOptions="Center" />
+                <Image x:Name="imgLogo" Source="logo.png" WidthRequest="100"  HeightRequest="100" />
+                <Grid Padding="30" Margin="70,10,10,10" WidthRequest="100" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"></ColumnDefinition>
+                        <ColumnDefinition  Width="150"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Entry x:Name="txtUsuario" 
+                           Placeholder="Ingrese Usuario"
+                           Grid.Row="0"
+                           Grid.Column="0"></Entry>
+                    <Entry x:Name="txtClave" 
+                           Placeholder="Ingrese Clave"
+                           IsPassword="True"
+                           Grid.Row="1"
+                           Grid.Column="0"></Entry>
+                    <Button x:Name="btnLoguin"
+                            Text="Continuar"
+                            Clicked="btnLoguin_Clicked"
+                            Grid.Row="2"
+                            Grid.Column="0"></Button>
+                </Grid>
+                <Label Text="Ubicación" FontSize="18" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                <ImageButton  x:Name="imgLogoUbicaion" Source="logoUbica.png"                             
+                             Aspect="AspectFit"
+                             BorderColor="Black"
+                             BorderWidth="1"        
+                             Padding="5"
+                             WidthRequest="70"  HeightRequest="70"
+                             Clicked="imgbotonUbicanos_Clicked"></ImageButton>
+                
+               
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
