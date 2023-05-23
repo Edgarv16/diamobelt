@@ -9,7 +9,7 @@ namespace diamobelt
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new Producto());
+            MainPage = new NavigationPage(new Loguin());
         }
 
         protected override void OnStart()

@@ -3,10 +3,98 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="diamobelt.Views.Home">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+                <StackLayout Padding="5"
+                             BackgroundColor="LightGray">
+                    <Label x:Name="lblUsuarioConectado"
+                           FontSize="16"></Label>
+                <Label Text="Bienvenidos Muebles Alexander"
+                       FontSize="20"
+                       HorizontalTextAlignment="Center"
+                       Margin="0,5,0,0"
+                       FontAttributes="Bold"
+                       TranslationX="10" />
+                    
+                <BoxView Color="CornflowerBlue"
+                         HeightRequest="1"></BoxView>
+                <Image x:Name="imgHome"
+                       Source="airnzclone.gif"                       
+                       WidthRequest="200"
+                       HeightRequest="200" />
+                <Grid Padding="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>                             
+                        
+                    <Button x:Name="btnClientes"
+                            Text="Clientes"
+                            Clicked="btnClientes_Clicked"
+                            CornerRadius="11"
+                            BackgroundColor="Brown"
+                            FontAttributes="Bold"
+                            Grid.Row="0"
+                            Grid.Column="0"></Button>
+                    <Button x:Name="btnProductos"
+                            Text="Productos"
+                            Clicked="btnProductos_Clicked"
+                            CornerRadius="11"
+                            BackgroundColor="Brown"
+                            FontAttributes="Bold"
+                            Grid.Row="1"
+                            Grid.Column="0"></Button>
+                    <Button x:Name="btnUsuarios"
+                            Text="Usuarios"
+                            Clicked="btnUsuarios_Clicked"
+                            CornerRadius="11"
+                            BackgroundColor="Brown"
+                            FontAttributes="Bold"
+                            Grid.Row="2"
+                            Grid.Column="0"></Button>
+                </Grid>
+                <Label Text="Próximos Pedidos:" FontAttributes="Bold"
+                       FontSize="20"></Label>
+                <ListView x:Name="ListaPedidos"
+                          ItemsSource="{Binding Items}"
+                          SelectedItem="{Binding SelectedItem}"
+                          ItemSelected="ListaPedidos_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>                             
+                                <StackLayout>
+                                    <Grid Padding="10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="75"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition></ColumnDefinition>
+                                            <ColumnDefinition></ColumnDefinition>
+                                            <ColumnDefinition></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Label x:Name="lblFechaPedido"
+                                               Text="{Binding fechaPedido}"
+                                               Grid.Row="0"
+                                               Grid.Column="0"></Label>
+                                        <Label x:Name="lblFechaEntrega"
+                                               Text="{Binding fechaEntrega}"
+                                               Grid.Row="0"
+                                               Grid.Column="1"></Label>
+                                        <Label x:Name="lblCelular"
+                                               Text="{Binding valorTotal}"
+                                               Grid.Row="0"
+                                               Grid.Column="2"></Label>
+                                    </Grid>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            </ScrollView>
     </ContentPage.Content>
 </ContentPage>
