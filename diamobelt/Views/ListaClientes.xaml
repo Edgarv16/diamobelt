@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="diamobelt.Views.ListaClientes">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+            <Frame BackgroundColor="#2196F3"
+                   Padding="10"
+                   CornerRadius="0">
+                <Label Text="Bienvenidos  a Muebles Alexander"
+                       HorizontalTextAlignment="Center"
+                       TextColor="White"
+                       FontSize="20" />
+            </Frame>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnRegresar"
+                            Text="Regresar"
+                            Clicked="btnRegresar_Clicked"
+                            CornerRadius="11"
+                            TextColor="White"
+                            BackgroundColor="#990000"
+                            Grid.Row="0"
+                            Grid.Column="0"></Button>
+                    <Button x:Name="btnNuevoCliente"
+                            Text="Nuevo Cliente"
+                            Clicked="btnNuevoCliente_Clicked"
+                            CornerRadius="11"
+                            TextColor="White"
+                            BackgroundColor="#990000"
+                            Grid.Row="0"
+                            Grid.Column="1"></Button>
+                </Grid>
+
+                <Grid Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="75"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Text="Identificación"
+                       FontSize="16"
+                       FontAttributes="Bold"
+                       Grid.Row="0"
+                       Grid.Column="0"></Label>
+                <Label Text="Nombres Apellidos"
+                       FontSize="16"
+                       FontAttributes="Bold"
+                       Grid.Row="0"
+                       Grid.Column="1"></Label>
+                <Label Text="Celular"
+                       FontSize="16"
+                       FontAttributes="Bold"
+                       Grid.Row="0"
+                       Grid.Column="2"></Label>
+            </Grid>
+                <ListView x:Name="ListClient"
+                          ItemsSource="{Binding Items}"
+                          SelectedItem="{Binding SelectedItem}"
+                          ItemSelected="ListClient_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem x:Name="menEliminar"
+                                              Text="Eliminar"
+                                              IsDestructive="True"
+                                              Clicked="menEliminar_Clicked"
+                                              CommandParameter="{Binding .}"></MenuItem>
+                                </ViewCell.ContextActions>
+                                <StackLayout>
+                                    <Grid Padding="10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="75"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition></ColumnDefinition>
+                                            <ColumnDefinition></ColumnDefinition>
+                                            <ColumnDefinition></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Label x:Name="lblNumeroIdentificacion"
+                                               Text="{Binding cedula}"
+                                               Grid.Row="0"
+                                               Grid.Column="0"></Label>
+                                        <Label x:Name="lblApellidosNombres"
+                                               Text="{Binding nombresApellidos}"
+                                               Grid.Row="0"
+                                               Grid.Column="1"></Label>
+                                        <Label x:Name="lblCelular"
+                                               Text="{Binding telefono}"
+                                               Grid.Row="0"
+                                               Grid.Column="2"></Label>
+                                    </Grid>
+                                    
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

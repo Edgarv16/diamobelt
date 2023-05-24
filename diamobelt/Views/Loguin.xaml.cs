@@ -45,7 +45,7 @@ namespace diamobelt
                         string resultado = await response.Content.ReadAsStringAsync();
 
                         //await DisplayAlert("Éxito", "Usuario válido", "OK");
-                        await Navigation.PushAsync(new Views.Home());
+                        await Navigation.PushAsync(new Views.Home(usuario));
 
                     }
                     else

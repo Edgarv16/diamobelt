@@ -3,10 +3,52 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="diamobelt.Views.RegistrarCliente">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Padding="10">
+                <Label Text="Registro de Clientes"
+                       FontSize="20"
+                       FontAttributes="Bold" />
+                <Entry x:Name="txtNumeroIdentificacion"
+                       Placeholder="Ingrese Número Identificación"></Entry>
+                <Entry x:Name="txtApellidosNombre"
+                       Placeholder="Ingrese Nombres Apellidos"></Entry>
+                <Entry x:Name="txtCelular"
+                       Placeholder="Ingrese Teléfono"></Entry>
+                <Entry x:Name="txtEmail"
+                       Placeholder="Ingrese email"></Entry>               
+                <Entry x:Name="txtDireccion"
+                       Placeholder="Ingrese Direción"></Entry>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnGuardar"
+                            Text="Guardar"
+                            Clicked="btnGuardar_Clicked"
+                            Grid.Row="0"
+                            Grid.Column="0"></Button>
+                    <Button x:Name="btnEliminar"
+                            Text="Eliminar"
+                            Clicked="btnEliminar_Clicked"
+                            Grid.Row="1"
+                            Grid.Column="0"></Button>
+                    <Button x:Name="btnActualizar"
+                            Text="Actualizar"
+                            Clicked="btnActualizar_Clicked"
+                            Grid.Row="0"
+                            Grid.Column="1"></Button>
+                    <Button x:Name="btnRegresar"
+                            Text="Regresar"
+                            Clicked="btnRegresar_Clicked"
+                            Grid.Row="1"
+                            Grid.Column="1"></Button>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

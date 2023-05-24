@@ -14,11 +14,10 @@
                        Margin="0,5,0,0"
                        FontAttributes="Bold"
                        TranslationX="10" />
-                    
-                <BoxView Color="CornflowerBlue"
+                <BoxView Color="#990000"
                          HeightRequest="1"></BoxView>
                 <Image x:Name="imgHome"
-                       Source="airnzclone.gif"                       
+                       Source="sala.png"                       
                        WidthRequest="200"
                        HeightRequest="200" />
                 <Grid Padding="5">
@@ -36,7 +35,8 @@
                             Text="Clientes"
                             Clicked="btnClientes_Clicked"
                             CornerRadius="11"
-                            BackgroundColor="Brown"
+                            BackgroundColor="#990000"
+                            TextColor="White"
                             FontAttributes="Bold"
                             Grid.Row="0"
                             Grid.Column="0"></Button>
@@ -44,7 +44,8 @@
                             Text="Productos"
                             Clicked="btnProductos_Clicked"
                             CornerRadius="11"
-                            BackgroundColor="Brown"
+                            TextColor="White"
+                            BackgroundColor="#990000"
                             FontAttributes="Bold"
                             Grid.Row="1"
                             Grid.Column="0"></Button>
@@ -52,13 +53,14 @@
                             Text="Usuarios"
                             Clicked="btnUsuarios_Clicked"
                             CornerRadius="11"
-                            BackgroundColor="Brown"
+                            TextColor="White"
+                            BackgroundColor="#990000"
                             FontAttributes="Bold"
                             Grid.Row="2"
                             Grid.Column="0"></Button>
                 </Grid>
                 <Label Text="Próximos Pedidos:" FontAttributes="Bold"
-                       FontSize="20"></Label>
+                       FontSize="25"></Label>
                 <ListView x:Name="ListaPedidos"
                           ItemsSource="{Binding Items}"
                           SelectedItem="{Binding SelectedItem}"
@@ -84,7 +86,7 @@
                                                Text="{Binding fechaEntrega}"
                                                Grid.Row="0"
                                                Grid.Column="1"></Label>
-                                        <Label x:Name="lblCelular"
+                                        <Label x:Name="lblValorTotal"
                                                Text="{Binding valorTotal}"
                                                Grid.Row="0"
                                                Grid.Column="2"></Label>

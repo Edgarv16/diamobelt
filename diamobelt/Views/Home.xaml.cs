@@ -19,9 +19,18 @@ namespace diamobelt.Views
         private const string Url = "http://192.168.5.10/diamobelt/Pedidos.php";
         private readonly HttpClient cliente = new HttpClient();
         private ObservableCollection<Pedidos> post;
+        string usuarioCon;
         public Home()
         {
             InitializeComponent();
+            Obtener();
+        }
+
+        public Home(String usuario)
+        {
+            InitializeComponent();
+            usuarioCon = usuario;
+            lblUsuarioConectado.Text = "Usuario Conectado: " + usuario;
             Obtener();
         }
 
@@ -33,32 +42,27 @@ namespace diamobelt.Views
             ListaPedidos.ItemsSource = post;
         }
 
-        private void btn_Clientes_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_Productos_Clicked(object sender, EventArgs e)
-        {
-
-        }
+    
 
         private void btnUsuarios_Clicked(object sender, EventArgs e)
         {
 
         }
 
-        private void btnProductos_Clicked(object sender, EventArgs e)
+
+
+
+        private void ListaPedidos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
 
         }
 
         private void btnClientes_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new Views.ListaClientes());
         }
 
-        private void ListaPedidos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private void btnProductos_Clicked(object sender, EventArgs e)
         {
 
         }
