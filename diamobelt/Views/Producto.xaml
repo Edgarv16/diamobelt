@@ -40,6 +40,8 @@
 
             </Grid>
 
+            <Button x:Name="btnTomarFoto" Text="Fotografia 2" Clicked="btnTomarFoto_Clicked"  ></Button>
+
 
 
         </StackLayout>
